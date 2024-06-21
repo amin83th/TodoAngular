@@ -1,0 +1,28 @@
+header{
+    width: 60%;
+    height: 150px;
+    border:1px solid rgb(63, 184, 178);
+    border-radius: 0 0 7px 7px ;
+    border-top: 0;
+    margin: auto;
+}
+header ul{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header ul li{
+   padding: 15px;
+}
+header ul li a{
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgb(19, 87, 92);
+    color: #eeee;
+    text-decoration: none;
+ }

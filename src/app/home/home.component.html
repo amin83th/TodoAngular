@@ -1,0 +1,36 @@
+<div id="all-home">
+  <table>
+    <tbody>
+      <tr>
+        <th>ToDo</th>
+        <th>Time</th>
+        <th>Do it</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+  </tbody>
+    <tbody>
+      @for (task of allTasks; track task) {
+
+      <tr class="{{ task.finish ? 'class-finished' : 'class-unfinished' }}">
+        <td>
+          {{ task.todo }}
+        </td>
+        <td>
+          {{ task.time }}
+        </td>
+        <td>
+          <span *ngIf="task.finish; else unfinished" >
+              <input type="checkbox" checked (click)="complate($event , task)">
+          </span>
+          <ng-template #unfinished><span>
+              <input type="checkbox" (click)="noComplate($event , task)">
+          </span></ng-template>
+        </td>
+        <td style="cursor: pointer;box-shadow: inset 1px 1px 25px hsla(0, 0%, 0%, 0.452);" (click)="delated(task)">DELETE</td>
+        <td  style="cursor: pointer;box-shadow: inset 1px 1px 25px hsla(0, 0%, 0%, 0.452);" (click)="edited($event)">EDIT</td>
+      </tr>
+      }
+  </tbody>
+  </table>
+</div>
